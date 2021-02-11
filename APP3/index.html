@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Découverte de AFRAME</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <img id="ground" src="images/ground.jpg">
+        <img id="sky" src="images/clear-sunny-sky.jpg">
+    </a-assets>
+    <a-sky src="#sky"></a-sky>
+    <a-box color="red" position="0 3 -4"></a-box>
+    <a-cylinder color="crimson" height="3" position="3 0 -4" radius="1.5"></a-cylinder>
+    <a-cone color="tomato" position="-3 0 -4" radius-bottom="2"></a-cone>
+    <a-sphere color="tomato" position="0 3 0"  radius="1.5"></a-sphere>
+
+    <a-plane material="color:#FFFFFF; src:#ground; repeat:1000 1000" position="0 0 -4" rotation="-90 0 0" width="1000" height="1000"></a-plane>
+
+
+</a-scene>
+</body>
+</html>
