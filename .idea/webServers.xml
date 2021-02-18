@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="162bcbb7-efcd-46ea-9a31-afe667925840" name="82.165.123.118" url="http://82.165.123.118">
+        <fileTransfer accessType="FTPS" host="82.165.123.118" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="3743cdea-63d4-4b2c-8319-ca4d84978126" name="ricgh">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="82.165.123.118" port="22" sshConfigId="a9729b51-513f-4ec3-bdf6-ee246883b247" sshConfig="root@82.165.123.118:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
