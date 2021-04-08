@@ -37,8 +37,9 @@
         if(age.value<10){
             alert('vous n\'avez pas accès');
         }else{
-            localStorage.settem('prenom', prenom.value);
-            window.location='jeu.html';
+            localStorage.setItem('score', 0);
+            localStorage.setItem('prenom', prenom.value);
+            window.location='scene1.html';
         }
     })
 

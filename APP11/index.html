@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create element in scene</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('entity-create', {
+            init: function () {
+                var camera = document.querySelector('#cam');
+                var scene = document.querySelector('a-scene');
+
+                this.el.addEventListener('click', function () {
+                    var position = new THREE.Vector3();
+                    var direction = new THREE.Vector3();
+                    var target = new THREE.Vector3();
+
+                    camera.object3D.getWorldPosition(position);
+                    camera.object3D.getWorldDirection(direction);
+                    direction.multiplyScalar(-2);
+                    target.add(position).add(direction);
+
+                    var sphere = document.createElement('a-sphere');
+                    sphere.setAttribute('material', {color: '#000000', side: 'double'});
+                    sphere.setAttribute('radius', 0.25);
+                    sphere.setAttribute('position', target);
+
+                    scene.appendChild(sphere);
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+<a-scene entity-create>
+    <a-entity position="0 0 8">
+        <a-camera id="cam" look-controls="pointerLockEnabled: true">
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-entity>
+    <a-plane color="#484848" shader="flat" rotation="-90 0 0" scale="6 4 1">
+    </a-plane>
+    <a-cylinder color="#FFAA00" radius="0.5" position="0 0.5 0">
+    </a-cylinder>
+
+</a-scene>
+
+</body>
+</html>
