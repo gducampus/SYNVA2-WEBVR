@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Déplacement des objets dans une scène</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="index.js"></script>
+  <title>Most Basic Super-Hands Example</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+  <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
 </head>
+
 <body>
-<a-scene>
-    <a-ssets>
-
-    </a-ssets>
-
-    <a-box dragndrop position="-1 0.5 -3" rotation="0 45 0" color="red"></a-box>
-    <a-sphere dragndrop position="0 1.5 -5" radius="2" color="blue"></a-sphere>
-    <a-cylinder dragndrop position="1 0.75 -3" radius="0.5" height="5" color="black"></a-cylinder>
-
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="green"></a-plane>
-</a-scene>
-
+  <a-scene>
+    <a-assets></a-assets>
+    <a-entity>
+      <a-camera></a-camera>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+    </a-entity>
+    <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+    <a-box hoverable grabbable stretchable draggable droppable color="blue" position="0 0 -1"></a-box>
+  </a-scene>
 </body>
 </html>
